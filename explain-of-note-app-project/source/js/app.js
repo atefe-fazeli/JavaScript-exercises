@@ -37,6 +37,8 @@ function saveHandler() {
 
 function deleteHandler() {
   inputElem.value = "";
+  inputElem.style.backgroundColor='white'
+
 }
 
 function changeColorHandler(event){
