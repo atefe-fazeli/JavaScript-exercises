@@ -1,35 +1,40 @@
-let $ = document
-let sliderImgElem = $.querySelector('img')
-let prevBtn = $.querySelector('.prev')
-let nextBtn = $.querySelector('.next')
+const images = ["./image/1.jpg", "./image/2.png", "./image/3.jpg"];
+let imageElem = document.querySelector("img");
+let prevElem=document.getElementsByClassName('prev')
+let nextElem=document.getElementsByClassName('next')
 
-let imgSrcArray = ['image/1.jpg', 'image/2.png', 'image/3.jpg']
-
-let imgIndex = 0
+let index=0;
 
 
-function prevImage() {
-  imgIndex--
-  if (imgIndex < 0) {
-    imgIndex = imgSrcArray.length - 1
+function setImageHandler() {
+  if (index == images.length) {
+    index = 0;
+    imageElem.src = `${images[index]}`;
+    console.log(index)
+    index++
+  } else {
+    imageElem.src =`${images[index]}`;
+    console.log(index)
+
+    index++;
   }
-  sliderImgElem.setAttribute('src', imgSrcArray[imgIndex])
-  console.log(imgIndex, imgSrcArray[imgIndex]);
 
 }
 
-
-
-function nextImage() {
-  imgIndex++
-  if (imgIndex > imgSrcArray.length - 1) {
-    imgIndex = 0
+function prevImageHandler() {
+  if (index==-1) {
+    index =images.length-1;
+    imageElem.src = `${images[index]}`;
+    console.log(index)
+    index--
+  } else {
+    imageElem.src =`${images[index]}`;
+    console.log(index)
+    index--;
   }
-  sliderImgElem.setAttribute('src', imgSrcArray[imgIndex])
-  console.log(imgIndex, imgSrcArray[imgIndex]);
+
 }
 
-setInterval(nextImage, 3000);
-
-prevBtn.addEventListener('click', prevImage)
-nextBtn.addEventListener('click', nextImage)
+setInterval(setImageHandler, 4000);
+nextElem[0].addEventListener('click',setImageHandler)
+prevElem[0].addEventListener('click',prevImageHandler)
