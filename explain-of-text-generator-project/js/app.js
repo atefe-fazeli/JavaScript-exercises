@@ -20,7 +20,6 @@ resultElem.innerHTML=''
   let i = 0;
   while (amountElem.value > 0 && i < amountElem.value) {
     let pElem = document.createElement("p");
-    pElem.style.marginBottom='30px'
     pElem.innerHTML = dummyText;
     resultElem.appendChild(pElem);
     i++;
