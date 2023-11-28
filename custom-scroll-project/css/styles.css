@@ -1,0 +1,13 @@
+body{
+    height: 2000px;
+    background-color: rgb(175, 171, 171);
+}
+
+.progressbar{
+    height: 10px;
+    border-radius: 20px;
+    background-color: rgb(73, 73, 195);
+    position: fixed;
+    top: 0;
+    right:0;
+}
